@@ -12,7 +12,6 @@ public class EventList {
         this.event = event;
         this.next = next;
     }
-
     public Event getEvent() {
         return event;
     }
