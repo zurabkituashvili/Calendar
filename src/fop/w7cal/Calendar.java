@@ -3,16 +3,16 @@ package fop.w7cal;
 public class Calendar {
     EventList events;
 
+    public Calendar() {
+        events = null;
+    }
+
     public EventList getEvents() {
         return events;
     }
 
     public void setEvents(EventList events) {
         this.events = events;
-    }
-
-    public Calendar(EventList events) {
-        this.events = null;
     }
 
     public void addNewEvent(Event event){
@@ -51,6 +51,13 @@ public class Calendar {
     }
 
     public Event nextEvent(int day){
+        EventList curr = events;
+        while (curr != null){
+            if (curr.getEvent().getDay() == day){
+                return curr.getEvent();
+            }
+            else curr = curr.getNext();
+        }
         return null;
     }
 }
