@@ -17,19 +17,37 @@ public class Calendar {
 
     public void addNewEvent(Event event){
         EventList curr = events;
-        if (events.getEvent() == null){
-            events.add(event);
+        if (events == null){
+            events = new EventList(event);
         }
         else{
-            while (curr != null){
-                curr = curr.getNext();
-            }
+            events.add(event);
         }
-        curr.add(event);
     }
 
     public Event[] eventsAt(int day){
-        return null;
+        EventList curr = events;
+        int counter = 0;
+        int i = 0;
+        if (events == null){
+            System.out.println("EventList is empty: ");
+            return null;
+        }
+        while (curr.getEvent() != null) {
+            if (curr.getEvent().diff(day) == day) {
+                counter++;
+            }
+            else curr = curr.getNext();
+        }
+        Event[] arr = new Event[counter];
+        EventList newCurr = events;
+        while (newCurr.getEvent() != null){
+            if (newCurr.getEvent().diff(day) == day){
+                arr[i++] = newCurr.getEvent();
+            }
+            else newCurr = newCurr.getNext();
+        }
+        return arr;
     }
 
     public Event nextEvent(int day){
