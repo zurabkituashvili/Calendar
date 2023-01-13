@@ -37,4 +37,7 @@ public class Event {
     public int diff(int day) {
         return this.day - day;
     }
+    public String toString(){
+        return this.getDay() + ", " + this.getDescription() + ", " + this.getPlace() + ";";
+    }
 }

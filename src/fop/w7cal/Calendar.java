@@ -74,8 +74,8 @@ public class Calendar {
             System.out.println("Empty Calendar");
             return "";
         } else {
-            while (curr != null) {
-                stringBuilder.append(curr.getEvent()).append("  ");
+            while (curr.getNext() != null) {
+                stringBuilder.append(curr.getEvent().toString()).append("  \n");
                 curr = curr.getNext();
             }
         }

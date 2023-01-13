@@ -23,4 +23,5 @@ public class EventList {
     public EventList add(Event event) {
         return new EventList(event, this);
     }
+
 }
