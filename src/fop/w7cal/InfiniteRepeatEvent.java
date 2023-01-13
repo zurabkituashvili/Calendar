@@ -18,6 +18,19 @@ public class InfiniteRepeatEvent extends Event {
 
     @Override
     public int diff(int day){
-        return this.getPeriod()%(this.getDay() - day);
+        if (day <= super.getDay()){
+            return super.getDay() - day;
+        }else {
+            int currDay = super.getDay();
+            while (true){
+                if (currDay == day){
+                    return 0;
+                }
+                if (day < currDay){
+                    return currDay - day;
+                }
+                currDay += this.period;
+            }
+        }
     }
 }

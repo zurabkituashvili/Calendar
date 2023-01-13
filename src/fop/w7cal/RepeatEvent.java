@@ -17,13 +17,23 @@ public class RepeatEvent extends InfiniteRepeatEvent{
 
     @Override
     public int diff(int day) {
-        if (day < this.getEnd()){
-            return this.getPeriod()%(this.getDay() - day);
+        if (day < super.getDay()) {
+            return super.getDay() - day;
         }
-        int lastEvent = 0;
-        for (int i = this.getDay(); i < this.getEnd(); i+=this.getPeriod()){
-            lastEvent = i;
+        if (day > end){
+            return end - day;
         }
-        return lastEvent - day;
+        else{
+            int currDay = super.getDay();
+            while (true){
+                if (currDay == day){
+                    return 0;
+                }
+                if (day < currDay){
+                    return currDay - day;
+                }
+                currDay += this.getPeriod();
+            }
+        }
     }
 }
