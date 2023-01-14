@@ -1,5 +1,4 @@
 <div _ngcontent-wbx-c194="" id="programming-exercise-instructions-content" class="guided-tour instructions__content__markdown markdown-preview"><h3 id="calendar">Calendar</h3>
-<p><img alt="313869913_640029977603437_1590002925365874440_n.png" src="/api/files/markdown/Markdown_2022-11-09T17-59-22-088_9c2f9d0f.png"></p>
 <p>In this assignment, we consider three types of events:</p>
 <ul>
 <li>one-time events</li>
@@ -36,4 +35,4 @@ The calendar provides the following functionality:</p>
 <em>In case of multiple events occurring at the same day, the first of these in the list
 should be returned.</em></li>
 </ul>
-<p><a rel="noopener noreferrer" href="https://bitbucket.ase.in.tum.de/scm/KIU20W7CAL/kiu20w7cal-solution.git">Possible solution</a></p></div>
+<p><a rel="noopener noreferrer" href="https://bitbucket.ase.in.tum.de/scm/KIU20W7CAL/kiu20w7cal-solution.git">
